@@ -15,7 +15,7 @@ import cookie from '@kingworldjs/cookie'
 const app = new KingWorld()
     .use(cookie())
     .get('/', ({ cookie: { user }, setCookie, removeCookie }) => {
-        if (user === 'admin') unsetCookie('user')
+        if (user === 'admin') removeCookie('user')
         if (!user)
             setCookie('user', 'saltyaom', {
                 httpOnly: true
